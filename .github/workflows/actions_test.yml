@@ -69,7 +69,7 @@ jobs:
           state: success
           context: status_test_1
         env: 
-          GITHUB_TOKEN: ${{ steps.get_token.outputs.app_token }}
+          GITHUB_TOKEN: ${{ steps.get_bot_token.outputs.app_token }}
         
       - uses: octokit/request-action@v2.x
         with:
@@ -79,7 +79,7 @@ jobs:
           state: success
           context: status_test_2
         env:
-          GITHUB_TOKEN: ${{ steps.get_token.outputs.app_token }}
+          GITHUB_TOKEN: ${{ steps.get_bot_token.outputs.app_token }}
           
       - uses: octokit/request-action@v2.x
         with:
@@ -89,7 +89,7 @@ jobs:
           state: success
           context: status_test_3
         env:
-          GITHUB_TOKEN: ${{ steps.get_token.outputs.app_token }}
+          GITHUB_TOKEN: ${{ steps.get_bot_token.outputs.app_token }}
           
       - uses: octokit/request-action@v2.x
         with:
@@ -99,7 +99,7 @@ jobs:
           state: success
           context: status_test_4
         env:
-          GITHUB_TOKEN: ${{ steps.get_token.outputs.app_token }}
+          GITHUB_TOKEN: ${{ steps.get_bot_token.outputs.app_token }}
           
       - uses: octokit/request-action@v2.x
         with:
@@ -109,4 +109,4 @@ jobs:
           state: success
           context: status_test_5
         env:
-          GITHUB_TOKEN: ${{ steps.get_token.outputs.app_token }}
+          GITHUB_TOKEN: ${{ steps.get_bot_token.outputs.app_token }}
