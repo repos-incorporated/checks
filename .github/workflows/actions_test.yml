@@ -49,5 +49,64 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      
+  status_test:
+    runs-on: ubuntu-latest
 
-      - run: echo actions_test_5
+    steps:
+      - name: Get bot token
+        id: get_bot_token
+        uses: machine-learning-apps/actions-app-token@master
+        with:
+          APP_PEM: ${{ secrets.CHECKS_BOT_PEM }}
+          APP_ID: ${{ secrets.CHECKS_BOT_ID }}
+    
+      - uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}/status
+          owner: octokit
+          repo: request-action
+          state: success
+          context: status_test_1
+        env: 
+          GITHUB_TOKEN: ${{ steps.get_token.outputs.app_token }}
+        
+      - uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}/status
+          owner: octokit
+          repo: request-action
+          state: success
+          context: status_test_2
+        env:
+          GITHUB_TOKEN: ${{ steps.get_token.outputs.app_token }}
+          
+      - uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}/status
+          owner: octokit
+          repo: request-action
+          state: success
+          context: status_test_3
+        env:
+          GITHUB_TOKEN: ${{ steps.get_token.outputs.app_token }}
+          
+      - uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}/status
+          owner: octokit
+          repo: request-action
+          state: success
+          context: status_test_4
+        env:
+          GITHUB_TOKEN: ${{ steps.get_token.outputs.app_token }}
+          
+      - uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}/status
+          owner: octokit
+          repo: request-action
+          state: success
+          context: status_test_5
+        env:
+          GITHUB_TOKEN: ${{ steps.get_token.outputs.app_token }}
