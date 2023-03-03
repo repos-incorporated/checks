@@ -55,13 +55,11 @@ jobs:
 
     steps:
       - name: Get PR sha
-        run:
-          echo "sha=${{ github.event.pull_request.head.sha }}" >> $GITHUB_ENV
+        run: echo "sha=${{ github.event.pull_request.head.sha }}" >> $GITHUB_ENV
         if: github.event_name == 'pull_request'
         
       - name: Get branch sha
-        run:
-          echo "sha=${{ github.sha }}" >> $GITHUB_ENV
+        run: echo "sha=${{ github.sha }}" >> $GITHUB_ENV
         if: github.event_name != 'pull_request'
     
       - name: Get bot token
