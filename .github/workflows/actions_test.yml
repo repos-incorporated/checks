@@ -63,7 +63,7 @@ jobs:
     
       - uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}/status
+          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}
           owner: octokit
           repo: request-action
           state: success
@@ -83,7 +83,7 @@ jobs:
           
       - uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}/status
+          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}
           owner: octokit
           repo: request-action
           state: success
@@ -93,7 +93,7 @@ jobs:
           
       - uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}/status
+          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}
           owner: octokit
           repo: request-action
           state: success
@@ -103,7 +103,7 @@ jobs:
           
       - uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}/status
+          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}
           owner: octokit
           repo: request-action
           state: success
