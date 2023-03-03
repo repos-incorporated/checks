@@ -54,6 +54,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Get PR sha
+        run:
+          echo "sha=${{ github.event.pull_request.head.sha }}" >> $GITHUB_ENV
+        if: github.event_name == 'pull_request'
+        
+      - name: Get branch sha
+        run:
+          echo "sha=${{ github.sha }}" >> $GITHUB_ENV
+        if: github.event_name != 'pull_request'
+    
       - name: Get bot token
         id: get_bot_token
         uses: machine-learning-apps/actions-app-token@master
@@ -63,7 +73,7 @@ jobs:
     
       - uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}
+          route: POST /repos/repos-incorporated/checks/statuses/${{ env.sha }}
           owner: octokit
           repo: request-action
           state: success
@@ -73,7 +83,7 @@ jobs:
         
       - uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}
+          route: POST /repos/repos-incorporated/checks/statuses/${{ env.sha }}
           owner: octokit
           repo: request-action
           state: success
@@ -83,7 +93,7 @@ jobs:
           
       - uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}
+          route: POST /repos/repos-incorporated/checks/statuses/${{ env.sha }}
           owner: octokit
           repo: request-action
           state: success
@@ -93,7 +103,7 @@ jobs:
           
       - uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}
+          route: POST /repos/repos-incorporated/checks/statuses/${{ env.sha }}
           owner: octokit
           repo: request-action
           state: success
@@ -103,7 +113,7 @@ jobs:
           
       - uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/repos-incorporated/checks/statuses/${{ github.sha }}
+          route: POST /repos/repos-incorporated/checks/statuses/${{ env.sha }}
           owner: octokit
           repo: request-action
           state: success
