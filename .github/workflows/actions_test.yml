@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   
   schedule:
-    - cron:  "*/60 * * * *"
+    - cron:  "*/5 * * * *"
 
 jobs:
   actions_test_1:
